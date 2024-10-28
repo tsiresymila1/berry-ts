@@ -39,7 +39,7 @@ const Header: FC<HeaderProps> = ({handleLeftDrawerToggle}) => {
                             ...theme.typography.commonAvatar,
                             ...theme.typography.mediumAvatar,
                             transition: 'all .2s ease-in-out',
-                            background: theme.palette.secondary.light,
+                            background: theme.palette.mode == 'dark' ? theme.palette.background.paper :theme.palette.secondary.light,
                             color: theme.palette.secondary.dark,
                             '&:hover': {
                                 background: theme.palette.secondary.dark,

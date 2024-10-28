@@ -27,6 +27,7 @@ const Main = styled('main', {
         ...theme.typography.mainContent,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
+        // backgroundColor: theme.palette.background.default,
         transition: theme.transitions.create(
             'margin',
             open
@@ -69,7 +70,7 @@ const MainLayout: FC = () => {
     }, [opened, setOpened]);
 
     return (
-        <Box sx={{display: 'flex'}}>
+        <Box sx={{display: 'flex', bgcolor: (theme.palette.dark as any)['900'],}}>
             {/* header */}
             <AppBar
                 enableColorOnDark
@@ -77,7 +78,7 @@ const MainLayout: FC = () => {
                 color="inherit"
                 elevation={0}
                 sx={{
-                    bgcolor: theme.palette.background.default,
+                    bgcolor: (theme.palette.dark as any)['900'],
                     transition: opened ? theme.transitions.create('width') : 'none'
                 }}
             >

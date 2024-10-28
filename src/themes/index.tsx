@@ -5,10 +5,14 @@ import { ScssColors } from "@/themes/types.ts";
 import themeTypography from "@/themes/typography.ts";
 import { createTheme } from "@mui/material/styles";
 import colors from '@/assets/scss/themes-vars.module.scss';
+import darkColors from '@/assets/scss/themes-dark-vars.module.scss';
 
 
 export const themes = (customization: CustomizationState) => {
     const color: ScssColors = (colors as unknown as ScssColors);
+    const darkColor: ScssColors = (darkColors as unknown as ScssColors);
+    const selectedColor = customization.scheme === "dark" ? darkColor : color
+    console.log()
     return createTheme({
             direction: 'ltr',
             mixins: {
@@ -20,9 +24,9 @@ export const themes = (customization: CustomizationState) => {
                     }
                 }
             },
-            palette: themePalette(color),
-            typography: themeTypography(color, customization),
-            components: componentStyleOverrides(color, customization)
+            palette: themePalette(selectedColor, customization),
+            typography: themeTypography(selectedColor, customization),
+            components: componentStyleOverrides(selectedColor, customization)
         }
     );
 };

@@ -2,7 +2,7 @@ import { CustomizationState } from "@/store/customization.ts";
 import { ScssColors } from "./types.ts";
 
 export default function componentStyleOverrides(colors: ScssColors,custom: CustomizationState) {
-    const bgColor = colors.grey50;
+    const bgColor = colors.background;
     return {
         MuiButton: {
             styleOverrides: {
@@ -97,7 +97,7 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
                 input: {
                     color: colors.textDark,
                     '&::placeholder': {
-                        color: colors.darkTextSecondary,
+                        color: colors.darkTextPrimary,
                         fontSize: '0.875rem'
                     }
                 }
@@ -109,10 +109,10 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
                     background: bgColor,
                     borderRadius: `${custom.borderRadius}px`,
                     '& .MuiOutlinedInput-notchedOutline': {
-                        borderColor: colors.grey400
+                        borderColor: colors.backgroundDefault
                     },
                     '&:hover $notchedOutline': {
-                        borderColor: colors.primaryLight
+                        borderColor: colors.backgroundDefault
                     },
                     '&.MuiInputBase-multiline': {
                         padding: 1
@@ -137,6 +137,16 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
                     borderRadius: `${custom.borderRadius}px`
                 }
             }
+        },
+        MuiRadio: {
+            styleOverrides: {
+                root: {
+                    color: colors.primaryMain,
+                    '&.Mui-checked': {
+                        color: colors.primaryMain, // checked color for light mode
+                    },
+                },
+            },
         },
         MuiSlider: {
             styleOverrides: {

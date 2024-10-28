@@ -13,6 +13,9 @@ import Radio from '@mui/material/Radio';
 import Slider from '@mui/material/Slider';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+
 
 // Third-party
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -29,7 +32,7 @@ import { IconSettings } from '@tabler/icons-react';
 
 const Customization = () => {
     const theme = useTheme();
-    const {borderRadius, setBorderRadius, fontFamily, setFontFamily} = useCustomizationStore(); // Adjust type according to your state structure
+    const {borderRadius, setBorderRadius, fontFamily, setFontFamily, scheme, setColorScheme} = useCustomizationStore(); // Adjust type according to your state structure
 
     // Drawer on/off
     const [open, setOpen] = useState<boolean>(false);
@@ -40,6 +43,10 @@ const Customization = () => {
     const handleBorderRadius = useCallback((_: Event, newValue: number | number[]) => {
         setBorderRadius(newValue as number);
     }, [setBorderRadius]);
+
+    const toggleDarkMode = useCallback(() => {
+        setColorScheme(scheme === 'dark' ? 'light' : 'dark');
+    }, [scheme, setColorScheme])
 
 
     return (
@@ -85,6 +92,16 @@ const Customization = () => {
                 <PerfectScrollbar component="div">
                     <Grid container width="100%" spacing={gridSpacing} sx={{p: 3}}>
                         <Grid size={12}>
+                            {/* Theme  */}
+                            <SubCard title="Theme" secondary={
+                                <IconButton
+                                    onClick={toggleDarkMode}
+                                    color="inherit"
+                                    aria-label="toggle dark/light mode">
+                                    {scheme === "dark" ? <Brightness7Icon/> : <Brightness4Icon/>}
+                                </IconButton>}/>
+                        </Grid>
+                        <Grid size={12}>
                             {/* Font family */}
                             <SubCard title="Font Family">
                                 <FormControl>
@@ -102,7 +119,7 @@ const Customization = () => {
                                                 label={font}
                                                 sx={{
                                                     '& .MuiSvgIcon-root': {fontSize: 28},
-                                                    '& .MuiFormControlLabel-label': {color: theme.palette.grey[900]},
+                                                    '& .MuiFormControlLabel-label': {color: theme.palette.text.primary},
                                                 }}
                                             />
                                         ))}

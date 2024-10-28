@@ -53,7 +53,7 @@ const TotalIncomeLightCard = ({isLoading, total, icon, label}: TotalIncomeCardPr
             {isLoading ? (
                 <TotalIncomeCard/>
             ) : (
-                <CardWrapper border={false} content={undefined}>
+                <CardWrapper border={false} content={undefined} contentSX={{ display: 'flex', alignItems: 'center', py:2 }}>
                     <Box>
                         <List sx={{py: 0}}>
                             <ListItem alignItems="center" disableGutters sx={{py: 0}}>

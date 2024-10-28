@@ -1,5 +1,6 @@
 import { ScssColors } from "@/themes/types.ts";
 import { PaletteColorOptions, Theme } from "@mui/material";
+import { CustomizationState } from "@/store/customization.ts";
 
 declare module "@mui/material/styles" {
     interface Palette {
@@ -17,10 +18,11 @@ declare module "@mui/material/styles" {
     }
 }
 export default function themePalette(
-    colors: ScssColors
+    colors: ScssColors,
+    custom: CustomizationState
 ): Partial<Theme["palette"]> {
     return {
-        mode: "light",
+        mode: custom.scheme,
         primary: {
             light: colors.primaryLight,
             main: colors.primaryMain,

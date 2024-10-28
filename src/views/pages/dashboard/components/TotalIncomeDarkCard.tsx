@@ -55,7 +55,7 @@ const TotalIncomeDarkCard = ({ isLoading }: TotalIncomeDarkCardProps) => {
             {isLoading ? (
                 <TotalIncomeCard />
             ) : (
-                <CardWrapper border={false} content={undefined}>
+                <CardWrapper border={false} contentSX={{ display: 'flex', alignItems: 'center', py:2 }}>
                     <Box>
                         <List sx={{ py: 0 }}>
                             <ListItem alignItems="center" disableGutters sx={{ py: 0 }}>
@@ -80,7 +80,7 @@ const TotalIncomeDarkCard = ({ isLoading }: TotalIncomeDarkCardProps) => {
                                         </Typography>
                                     }
                                     secondary={
-                                        <Typography variant="subtitle2" sx={{ color: 'primary.light', mt: 0.25 }}>
+                                        <Typography variant="subtitle2" sx={{ color: 'grey.50', mt: 0.25 }}>
                                             Total Income
                                         </Typography>
                                     }

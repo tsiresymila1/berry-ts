@@ -51,7 +51,8 @@ const EarningCard = ({isLoading}: EarningCardProps) => {
                         padding: '16px'
                     }}
                     sx={{
-                        bgcolor: 'secondary.dark',
+                        bgcolor: theme.palette.mode === 'dark' ? 'background.paper': 'secondary.dark',
+                        height: '100%',
                         color: '#fff',
                         overflow: 'hidden',
                         position: 'relative',

@@ -27,7 +27,7 @@ const DashboardPage = () => {
     }, []);
 
     return (
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
             <Grid container spacing={gridSpacing}>
                 <Grid size={12}>
                     <Grid container spacing={gridSpacing}>
@@ -38,7 +38,7 @@ const DashboardPage = () => {
                             <TotalOrderLineChartCard isLoading={isLoading}/>
                         </Grid>
                         <Grid size={{lg: 4, md: 12, sm: 12, xs: 12}}>
-                            <Grid container spacing={gridSpacing}>
+                            <Grid container spacing={gridSpacing/2}>
                                 <Grid size={{lg: 12, md: 6, sm: 6, xs: 12}}>
                                     <TotalIncomeDarkCard isLoading={isLoading}/>
                                 </Grid>

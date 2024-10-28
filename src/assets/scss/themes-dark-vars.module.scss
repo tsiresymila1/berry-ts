@@ -1,86 +1,91 @@
+// ==============================|| DARK THEME COLOR VARIABLES ||============================== //
+
 // paper & background
-$paper: #ffffff;
+$paper: rgb(33, 41, 70); // Dark background for paper
+$background: rgb(26, 34, 63); // Dark background for the entire app
 
 // primary
-$primaryLight: #eef2f6;
-$primaryMain: #2196f3;
-$primaryDark: #1e88e5;
-$primary200: #90caf9;
-$primary800: #1565c0;
+$primaryLight: rgb(26, 34, 63); // Lighter primary color for dark theme
+$primaryMain: #2196f3; // Main primary color
+$primaryDark: #1976d2; // Darker primary color
+$primary200: #90caf9; // Primary color 200
+$primary800: #0d47a1; // Primary color 800
 
 // secondary
-$secondaryLight: #ede7f6;
-$secondaryMain: #673ab7;
-$secondaryDark: #5e35b1;
-$secondary200: #b39ddb;
-$secondary800: #4527a0;
+$secondaryLight: #d1c4e9; // Lighter secondary color
+$secondaryMain: #7c4dff; // Main secondary color
+$secondaryDark: #651fff; // Darker secondary color
+$secondary200: #b39ddb; // Secondary color 200
+$secondary800: #6200ea; // Secondary color 800
 
-// success Colors
-$successLight: #b9f6ca;
-$success200: #69f0ae;
-$successMain: #00e676;
-$successDark: #00c853;
+// success colors
+$successLight: #388e3c; // Light success color
+$success200: #66bb6a; // Success color 200
+$successMain: #4caf50; // Main success color
+$successDark: #2e7d32; // Dark success color
 
-// error
-$errorLight: #ef9a9a;
-$errorMain: #f44336;
-$errorDark: #c62828;
+// error colors
+$errorLight: #e57373; // Light error color
+$errorMain: #f44336; // Main error color
+$errorDark: #c62828; // Dark error color
 
 // orange
-$orangeLight: #fbe9e7;
-$orangeMain: #ffab91;
-$orangeDark: #d84315;
+$orangeLight: #ffccbc; // Light orange
+$orangeMain: #ff7043; // Main orange
+$orangeDark: #f4511e; // Dark orange
 
-// warning
-$warningLight: #fff8e1;
-$warningMain: #ffe57f;
-$warningDark: #ffc107;
+// warning colors
+$warningLight: #ffe082; // Light warning color
+$warningMain: #ffc107; // Main warning color
+$warningDark: #ff8f00; // Dark warning color
 
 // grey
-$grey50: #f8fafc;
-$grey100: #eef2f6;
-$grey200: #e3e8ef;
-$grey300: #cdd5df;
-$grey500: #697586;
-$grey600: #4b5565;
-$grey700: #364152;
-$grey900: #121926;
+$grey50: #424242; // Dark grey 50
+$grey100: #616161; // Dark grey 100
+$grey200:rgba(227, 232, 239, 0.2) ; // Dark grey 200
+$grey300: #9e9e9e; // Dark grey 300
+$grey500: #e0e0e0; // Dark grey 500
+$grey600: #ffffff; // Light grey
+$grey700: #f5f5f5; // Light grey 700
+$grey900: #e0e0e0; // Light grey 900
 
 
 // ==============================|| LIGHT THEME VARIANTS ||============================== //
 
+// ==============================|| DARK THEME VARIANTS ||============================== //
+
 // paper & background
-$darkBackground: #ffffff; // Inverse of dark background
-$darkPaper: #ffffff; // Inverse of dark paper
+$darkBackground: #1a223f; // level 3
+$darkPaper: #111936; // level 4
 
 // dark 800 & 900
-$darkLevel1: #d9e2ef; // Inverse of dark level 1
-$darkLevel2: #f0f4ff; // Inverse of dark level 2
+$darkLevel1: #29314f; // level 1
+$darkLevel2: #212946; // level 2
 
 // primary dark
-$darkPrimaryLight: #1e88e5; // Inverse of dark primary light
-$darkPrimaryMain: #2196f3; // Inverse of dark primary main
-$darkPrimaryDark: #1e88e5; // Inverse of dark primary dark
-$darkPrimary200: #bbdefb; // Inverse of dark primary 200
-$darkPrimary800: #0d47a1; // Inverse of dark primary 800
+$darkPrimaryLight: #eef2f6;
+$darkPrimaryMain: #2196f3;
+$darkPrimaryDark: #1e88e5;
+$darkPrimary200: #90caf9;
+$darkPrimary800: #1565c0;
 
 // secondary dark
-$darkSecondaryLight: #651fff; // Inverse of dark secondary light
-$darkSecondaryMain: #7c4dff; // Inverse of dark secondary main
-$darkSecondaryDark: #5e35b1; // Inverse of dark secondary dark
-$darkSecondary200: #b39ddb; // Inverse of dark secondary 200
-$darkSecondary800: #6200ea; // Inverse of dark secondary 800
+$darkSecondaryLight: #d1c4e9;
+$darkSecondaryMain: #7c4dff;
+$darkSecondaryDark: #651fff;
+$darkSecondary200: #b39ddb;
+$darkSecondary800: #6200ea;
 
 // text variants
-$darkTextTitle: #d7dcec;
-$darkTextPrimary: rgb(18, 25, 38);
+$darkTextTitle: rgb(18, 25, 38);
+$darkTextPrimary:  #d7dcec;
 $darkTextSecondary: #282b36;
-
 // ==============================|| JAVASCRIPT ||============================== //
 
 :export {
   // paper & background
   paper: $paper;
+  background: $background;
 
   // primary
   primaryLight: $primaryLight;
@@ -128,7 +133,6 @@ $darkTextSecondary: #282b36;
   grey900: $grey900;
 
   // ==============================|| DARK THEME VARIANTS ||============================== //
-
 
   // paper & background
   darkPaper: $darkPaper;

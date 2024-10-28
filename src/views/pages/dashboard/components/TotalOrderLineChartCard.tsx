@@ -47,10 +47,11 @@ const TotalOrderLineChartCard = ({isLoading}: TotalOrderLineChartCardProps) => {
                         padding: '16px'
                     }}
                     sx={{
-                        bgcolor: 'primary.dark',
+                        bgcolor: theme.palette.mode === 'dark' ? 'background.paper': 'primary.dark',
                         color: '#fff',
                         overflow: 'hidden',
                         position: 'relative',
+                        height: '100%',
                         '&>div': {
                             position: 'relative',
                             zIndex: 5

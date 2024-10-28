@@ -77,6 +77,7 @@ const Sidebar: FC<SidebarProps> = ({drawerOpen, drawerToggle, window}) => {
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
+    // @ts-ignore
     return (
         <Box
             component="nav"
@@ -92,7 +93,7 @@ const Sidebar: FC<SidebarProps> = ({drawerOpen, drawerToggle, window}) => {
                 sx={{
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
-                        background: theme.palette.background.default,
+                        background: (theme.palette.dark as any)['900'],
                         color: theme.palette.text.primary,
                         borderRight: 'none',
                         [theme.breakpoints.up('md')]: {

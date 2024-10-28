@@ -130,7 +130,7 @@ export default function themeTypography(
             },
         },
         mainContent: {
-            backgroundColor: colors.background,
+            background: colors.background,
             width: "100%",
             minHeight: "calc(100vh - 88px)",
             flexGrow: 1,

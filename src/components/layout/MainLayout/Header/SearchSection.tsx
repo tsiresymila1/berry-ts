@@ -33,7 +33,7 @@ const HeaderAvatar = forwardRef<HTMLDivElement, HeaderAvatarProps>(({children, .
             sx={{
                 ...theme.typography.commonAvatar,
                 ...theme.typography.mediumAvatar,
-                bgcolor: 'secondary.light',
+                bgcolor: theme.palette.mode == 'dark' ? theme.palette.background.paper :theme.palette.secondary.light,
                 color: 'secondary.dark',
                 '&:hover': {
                     bgcolor: 'secondary.dark',
