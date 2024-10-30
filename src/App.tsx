@@ -4,6 +4,7 @@ import { CssBaseline, StyledEngineProvider, ThemeProvider } from "@mui/material"
 import { NavigationScroll } from "@/components/layout/NavigationScroll";
 import { RouterProvider } from "react-router";
 import router from "@/routes";
+import { SnackbarProvider } from "notistack";
 
 // const theme = unstable_createMuiStrictModeTheme();
 
@@ -16,7 +17,9 @@ const App = () => {
             <ThemeProvider theme={themes(custom)}>
                 <CssBaseline/>
                 <NavigationScroll>
-                    <RouterProvider router={router}/>
+                    <SnackbarProvider>
+                        <RouterProvider router={router}/>
+                    </SnackbarProvider>
                 </NavigationScroll>
             </ThemeProvider>
         </StyledEngineProvider>
