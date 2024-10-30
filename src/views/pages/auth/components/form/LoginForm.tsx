@@ -95,8 +95,8 @@ const AuthLogin: FC<AuthLoginProps> = ({...others}) => {
                                 m: 2,
                                 py: 0.5,
                                 px: 7,
-                                borderColor: `${theme.palette.grey[100]} !important`,
-                                color: `${theme.palette.grey[900]}!important`,
+                                // borderColor: `${theme.palette.grey[100]} !important`,
+                                // color: `${(theme.palette.dark as any)['900']}!important`,
                                 fontWeight: 500,
                                 borderRadius: `${customization.borderRadius}px`,
                             }}
@@ -202,7 +202,7 @@ const AuthLogin: FC<AuthLoginProps> = ({...others}) => {
                         <Box sx={{mt: 2}}>
                             <AnimateButton>
                                 <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit"
-                                        variant="contained" color="secondary">
+                                        variant="contained" color="primary">
                                     Sign in
                                 </Button>
                             </AnimateButton>

@@ -16,6 +16,7 @@ import Divider from '@mui/material/Divider';
 import Chip from '@/components/ui/extended/Chip.tsx';
 import { IconBrandTelegram, IconBuildingStore, IconMailbox, IconPhoto } from '@tabler/icons-react';
 import User1 from '@/assets/images/users/user-round.svg';
+import { SimplePaletteColorOptions } from "@mui/material/styles/createPalette";
 
 
 const ListItemWrapper: FC<PropsWithChildren> = ({children}) => (
@@ -42,8 +43,8 @@ const NotificationList: FC = () => {
             error: {
                 height: 24,
                 padding: '0 6px',
-                color: theme.palette.orange.dark,
-                backgroundColor: theme.palette.orange.light,
+                color: (theme.palette.orange as SimplePaletteColorOptions).dark,
+                backgroundColor: (theme.palette.orange as SimplePaletteColorOptions).light,
                 marginRight: '5px',
             },
             warning: {
@@ -59,7 +60,7 @@ const NotificationList: FC = () => {
                 backgroundColor: theme.palette.success.light,
             },
         }),
-        [theme.palette.orange.dark, theme.palette.orange.light, theme.palette.warning.dark, theme.palette.warning.light, theme.palette.success.dark, theme.palette.success.light]
+        [theme.palette.orange, theme.palette.warning.dark, theme.palette.warning.light, theme.palette.success.dark, theme.palette.success.light]
     );
 
     const notifications = useMemo(
@@ -195,7 +196,7 @@ const NotificationList: FC = () => {
                                             <Card sx={{backgroundColor: theme.palette.secondary.light}}>
                                                 <CardContent>
                                                     <Grid container direction="column">
-                                                        <Grid xs={12}>
+                                                        <Grid size={12}>
                                                             <Stack direction="row" spacing={2}>
                                                                 {notification.file.icon}
                                                                 <Typography

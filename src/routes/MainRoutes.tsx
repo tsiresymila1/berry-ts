@@ -5,6 +5,7 @@ import { lazy } from "react";
 // import { Outlet } from "react-router-dom";
 
 const DashboardPage = Loadable(lazy(() => import('@/views/pages/dashboard/DashboardPage')));
+const CalendarPage = Loadable(lazy(() => import('@/views/pages/application/CalendarPage')));
 
 const MainRoutes: RouteObject = {
     path: '/admin',
@@ -14,6 +15,10 @@ const MainRoutes: RouteObject = {
             path: '',
             index: true,
             element: <DashboardPage/>
+        },
+        {
+            path: 'calendar',
+            element: <CalendarPage/>
         }
     ]
 }

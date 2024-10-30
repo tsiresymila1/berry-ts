@@ -1,5 +1,5 @@
 // material-ui
-import { useTheme } from '@mui/material/styles';
+// import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid2';
@@ -15,7 +15,7 @@ type ShadowBoxProps = {
     shadow: string;
 };
 
-const ShadowBox: FC<ShadowBoxProps> = ({shadow}) => {
+export const ShadowBox: FC<ShadowBoxProps> = ({shadow}) => {
     return (
         <Card sx={{mb: 3, boxShadow: shadow}}>
             <Box
@@ -35,13 +35,14 @@ const ShadowBox: FC<ShadowBoxProps> = ({shadow}) => {
 };
 
 
+
 type CustomShadowBoxProps = {
     shadow: string;
     label?: string;
     color: string;
 };
 
-const CustomShadowBox: FC<CustomShadowBoxProps> = ({shadow, label, color}) => (
+export const CustomShadowBox: FC<CustomShadowBoxProps> = ({shadow, label, color}) => (
     <Card sx={{mb: 3, boxShadow: shadow}}>
         <Box
             sx={{
@@ -64,17 +65,17 @@ const CustomShadowBox: FC<CustomShadowBoxProps> = ({shadow, label, color}) => (
 
 
 const UtilitiesShadow: FC = () => {
-    const theme = useTheme();
+    // const _theme = useTheme();
 
     return (
         <MainCard title="Basic Shadow"
                   secondary={<SecondaryAction link="https://next.material-ui.com/system/shadows/"/>}>
             <Grid container spacing={gridSpacing}>
-                <Grid xs={12}>
+                <Grid size={12}>
                     <SubCard title="Basic Shadow">
                         <Grid container spacing={gridSpacing}>
                             {Array.from({length: 25}, (_, i) => (
-                                <Grid xs={12} sm={6} md={4} lg={3} key={i}>
+                                <Grid size={{xs: 12, sm: 6, md: 4, lg: 3}} key={i}>
                                     <ShadowBox shadow={String(i)}/>
                                 </Grid>
                             ))}

@@ -128,7 +128,7 @@ const NotificationSection = () => {
                     <Transitions position={matchesXs ? 'top' : 'top-right'} in={open} {...TransitionProps}>
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
-                                <MainCard border={false} elevation={16} content={false} boxShadow
+                                <MainCard border={false} elevation={16} content={undefined} boxShadow
                                           shadow={theme.shadows[16]}>
                                     <Grid container direction="column" spacing={2}>
                                         <Grid size={12}>

@@ -11,14 +11,14 @@ const TotalGrowthBarChart = () => (
     <Card>
         <CardContent>
             <Grid container spacing={gridSpacing}>
-                <Grid xs={12}>
+                <Grid size={12}>
                     <Grid container alignItems="center" justifyContent="space-between" spacing={gridSpacing}>
-                        <Grid zeroMinWidth>
+                        <Grid>
                             <Grid container spacing={1}>
-                                <Grid xs={12}>
+                                <Grid size={12}>
                                     <Skeleton variant="text"/>
                                 </Grid>
-                                <Grid xs={12}>
+                                <Grid size={12}>
                                     <Skeleton variant="rectangular" height={20}/>
                                 </Grid>
                             </Grid>
@@ -28,7 +28,7 @@ const TotalGrowthBarChart = () => (
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid xs={12}>
+                <Grid size={12}>
                     <Skeleton variant="rectangular" height={530}/>
                 </Grid>
             </Grid>

@@ -15,11 +15,11 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
         },
         MuiPaper: {
             defaultProps: {
-                elevation: 0
+                elevation: 0,
             },
             styleOverrides: {
                 root: {
-                    backgroundImage: 'none'
+                    backgroundImage: 'none',
                 },
                 rounded: {
                     borderRadius: `${custom.borderRadius}px`
@@ -40,14 +40,14 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
         MuiCardContent: {
             styleOverrides: {
                 root: {
-                    padding: '24px'
+                    padding: '12px'
                 }
             }
         },
         MuiCardActions: {
             styleOverrides: {
                 root: {
-                    padding: '24px'
+                    padding: '16px'
                 }
             }
         },

@@ -27,7 +27,7 @@ const BajajAreaChartCard = () => {
     }, [orangeDark]);
 
     return (
-        <Card sx={{ bgcolor: 'secondary.light' }}>
+        <Card sx={{ bgcolor: 'rgb(218,202,231)' }}>
             <Grid container sx={{ p: 2, pb: 0, color: '#fff' }}>
                 <Grid  size={12}>
                     <Grid container alignItems="center" justifyContent="space-between">

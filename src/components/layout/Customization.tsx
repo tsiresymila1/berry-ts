@@ -149,7 +149,7 @@ const Customization = () => {
                                             color="secondary"
                                             sx={{
                                                 '& .MuiSlider-valueLabel': {
-                                                    color: 'secondary.light',
+                                                    color: '#fff',
                                                 },
                                             }}
                                         />

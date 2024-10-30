@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // project imports
-import { styled, useTheme } from '@mui/material';
+import { Container, styled, useTheme } from '@mui/material';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Customization from '../Customization';
@@ -92,8 +92,10 @@ const MainLayout: FC = () => {
 
             {/* main content */}
             <Main open={opened} theme={undefined}>
-                <Breadcrumbs separator={IconChevronRight} icon title rightAlign/>
-                <Outlet/>
+                <Container>
+                    <Breadcrumbs separator={IconChevronRight} icon title rightAlign/>
+                    <Outlet/>
+                </Container>
             </Main>
             <Customization/>
         </Box>

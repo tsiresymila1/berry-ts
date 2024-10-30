@@ -109,8 +109,8 @@ const AuthRegister: FC<AuthRegisterProps> = ({...others}) => {
                                 m: 2,
                                 py: 0.5,
                                 px: 7,
-                                borderColor: `${theme.palette.grey[100]} !important`,
-                                color: `${theme.palette.grey[900]}!important`,
+                                // borderColor: `${theme.palette.grey[100]} !important`,
+                                // color: `${theme.palette.grey[900]}!important`,
                                 fontWeight: 500,
                                 borderRadius: `${customization.borderRadius}px`
                             }}

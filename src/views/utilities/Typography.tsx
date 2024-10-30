@@ -12,7 +12,7 @@ const Typography = () => (
     <MainCard title="Basic Typography"
               secondary={<SecondaryAction link="https://next.material-ui.com/system/typography/"/>}>
         <Grid container spacing={gridSpacing}>
-            <Grid xs={12} sm={6}>
+            <Grid size={{xs: 12, sm: 6}}>
                 <SubCard title="Heading">
                     <Grid container direction="column" spacing={1}>
                         <Grid >
@@ -48,7 +48,7 @@ const Typography = () => (
                     </Grid>
                 </SubCard>
             </Grid>
-            <Grid xs={12} sm={6}>
+            <Grid size={{xs: 12, sm: 6}}>
                 <SubCard title="Sub title">
                     <Grid container direction="column" spacing={1}>
                         <Grid>
@@ -64,7 +64,7 @@ const Typography = () => (
                     </Grid>
                 </SubCard>
             </Grid>
-            <Grid xs={12} sm={6}>
+            <Grid size={{xs: 12, sm: 6}}>
                 <SubCard title="Body">
                     <Grid container direction="column" spacing={1}>
                         <Grid>
@@ -86,7 +86,7 @@ const Typography = () => (
                     </Grid>
                 </SubCard>
             </Grid>
-            <Grid xs={12} sm={6}>
+            <Grid size={{xs: 12, sm: 6}}>
                 <SubCard title="Extra">
                     <Grid container direction="column" spacing={1}>
                         <Grid>

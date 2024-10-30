@@ -12,7 +12,7 @@ $primary200: #90caf9; // Primary color 200
 $primary800: #0d47a1; // Primary color 800
 
 // secondary
-$secondaryLight: #d1c4e9; // Lighter secondary color
+$secondaryLight: rgba(108, 52, 199, 0.12); // Lighter secondary color
 $secondaryMain: #7c4dff; // Main secondary color
 $secondaryDark: #651fff; // Darker secondary color
 $secondary200: #b39ddb; // Secondary color 200
@@ -79,7 +79,7 @@ $darkSecondary800: #6200ea;
 // text variants
 $darkTextTitle: rgb(18, 25, 38);
 $darkTextPrimary:  #d7dcec;
-$darkTextSecondary: #282b36;
+$darkTextSecondary: #a3b0de;
 // ==============================|| JAVASCRIPT ||============================== //
 
 :export {

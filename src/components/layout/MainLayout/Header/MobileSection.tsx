@@ -1,7 +1,6 @@
-import { FC, MouseEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
 
 // Material-UI
-import { useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -27,7 +26,7 @@ const MobileSection: FC = () => {
         setOpen((prevOpen) => !prevOpen);
     };
 
-    const handleClose = useCallback((event: MouseEvent<Document> | TouchEvent) => {
+    const handleClose = useCallback((event: MouseEvent | TouchEvent) => {
         if (anchorRef.current && anchorRef.current?.contains(event.target as Node)) {
             return;
         }

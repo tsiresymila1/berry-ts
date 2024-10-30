@@ -1,11 +1,12 @@
 import { ScssColors } from "@/themes/types.ts";
-import { PaletteColorOptions, Theme } from "@mui/material";
+import { Theme } from "@mui/material";
 import { CustomizationState } from "@/store/customization.ts";
+import { ColorPartial } from "@mui/material/styles/createPalette";
 
 declare module "@mui/material/styles" {
     interface Palette {
-        dark: PaletteColorOptions;
-        orange: PaletteColorOptions;
+        dark: ColorPartial & Partial<PaletteColor>;
+        orange: ColorPartial & Partial<PaletteColor>;
     }
     interface TypeText {
         hint: string;

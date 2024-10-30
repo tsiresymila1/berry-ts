@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import { FC, Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
@@ -49,8 +49,6 @@ const NavCollapse: FC<NavCollapseProps> = ({menu, level}) => {
     }
 
     useEffect(() => {
-        setOpen(false);
-        setSelected(null);
         if (menu.children) {
             menu.children.forEach((item) => {
                 if (item.children?.length) {
@@ -149,7 +147,11 @@ const NavCollapse: FC<NavCollapseProps> = ({menu, level}) => {
                         }
                     }}
                 >
-                    {menus}
+                    {menus?.map((menu) => (
+                        <Fragment key={menu.key}>
+                            {menu}
+                        </Fragment>
+                    ))}
                 </List>
             </Collapse>
         </>

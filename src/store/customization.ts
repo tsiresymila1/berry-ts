@@ -33,7 +33,7 @@ export const useCustomizationStore = create(
         }),
         {
             name: 'customization-storage',
-            storage: createJSONStorage(() => sessionStorage)
+            storage: createJSONStorage(() => localStorage)
         }
     )
 );

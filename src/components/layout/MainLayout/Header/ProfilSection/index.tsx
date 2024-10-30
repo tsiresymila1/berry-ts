@@ -1,4 +1,4 @@
-import { FC, MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // material-ui
@@ -57,9 +57,9 @@ const ProfileSection: FC = () => {
     }), []);
 
 
-    const _handleLogout = useCallback(async () => {
-        console.log('Logout');
-    }, []);
+    // const _handleLogout = useCallback(async () => {
+    //     console.log('Logout');
+    // }, []);
 
     const handleClose = useCallback((event: MouseEvent | TouchEvent): void => {
         if (anchorRef.current && !(anchorRef.current) || anchorRef.current?.contains(event.target as Node)) {
@@ -68,7 +68,7 @@ const ProfileSection: FC = () => {
         setOpen(false);
     }, [])
 
-    const handleListItemClick = useCallback((event: MouseEvent<HTMLLIElement>, index: number, route: string = '') => {
+    const handleListItemClick = useCallback((event: MouseEvent, index: number, route: string = '') => {
         setSelectedIndex(index);
         handleClose(event);
 
@@ -155,7 +155,7 @@ const ProfileSection: FC = () => {
                     <Transitions in={open} {...TransitionProps}>
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
-                                <MainCard border={false} elevation={16} content={false} boxShadow
+                                <MainCard border={false} elevation={16} content={undefined} boxShadow
                                           shadow={theme.shadows[16]}>
                                     <Box sx={{p: 2, pb: 0}}>
                                         <Stack>
@@ -197,7 +197,7 @@ const ProfileSection: FC = () => {
                                             >
                                                 <CardContent>
                                                     <Grid container spacing={3} direction="column">
-                                                        <Grid >
+                                                        <Grid>
                                                             <Grid container alignItems="center"
                                                                   justifyContent="space-between">
                                                                 <Grid>
@@ -255,7 +255,7 @@ const ProfileSection: FC = () => {
                                                 <ListItemButton
                                                     sx={{borderRadius: `${customization.borderRadius}px`}}
                                                     selected={selectedIndex === 0}
-                                                    onClick={(event) => handleListItemClick(event, 0, '#')}
+                                                    onClick={(event) => handleListItemClick(event as any, 0, '#')}
                                                 >
                                                     <ListItemIcon>
                                                         <IconSettings stroke={1.5} size="1.3rem"/>
@@ -266,7 +266,7 @@ const ProfileSection: FC = () => {
                                                 <ListItemButton
                                                     sx={{borderRadius: `${customization.borderRadius}px`}}
                                                     selected={selectedIndex === 1}
-                                                    onClick={(event) => handleListItemClick(event, 1, '#')}
+                                                    onClick={(event) => handleListItemClick(event as any, 1, '#')}
                                                 >
                                                     <ListItemIcon>
                                                         <IconUser stroke={1.5} size="1.3rem"/>
@@ -288,7 +288,7 @@ const ProfileSection: FC = () => {
                                                 <ListItemButton
                                                     sx={{borderRadius: `${customization.borderRadius}px`}}
                                                     selected={selectedIndex === 2}
-                                                    onClick={(event) => handleListItemClick(event, 2, '#')}
+                                                    onClick={(event) => handleListItemClick(event as any, 2, '#')}
                                                 >
                                                     <ListItemIcon>
                                                         <IconLogout stroke={1.5} size="1.3rem"/>

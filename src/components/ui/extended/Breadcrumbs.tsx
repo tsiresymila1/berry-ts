@@ -222,7 +222,7 @@ const Breadcrumbs = ({
         );
     }
 
-    if ((item && item.type === 'item') || (item?.type === 'group' && item?.url) || custom) {
+    if (((item && item.type === 'item') || (item?.type === 'group' && item?.url) || custom) && item.breadcrumbs) {
         breadcrumbContent = (
             <Card sx={card === false ? {mb: 3, bgcolor: 'transparent', ...sx} : {
                 mb: 3,
