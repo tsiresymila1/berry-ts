@@ -1,7 +1,8 @@
 
 import { IconBrandChrome, IconHelp } from '@tabler/icons-react';
+import { MenuItem } from "@/components/layout/MainLayout/Sidebar/MenuList/NavItem.tsx";
 
-const other = {
+const other: MenuItem = {
     id: 'sample-docs-roadmap',
     type: 'group',
     children: [

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import NavItem, { MenuItem } from './NavItem';
 import NavCollapse from './NavCollapse';
 
-import { FC, useMemo } from 'react';
+import { FC, Fragment, useMemo } from 'react';
 
 
 interface NavGroupProps {
@@ -54,7 +54,11 @@ const NavGroup: FC<NavGroupProps> = ({ item }) => {
                     )
                 }
             >
-                {items}
+                {items?.map((item) => (
+                    <Fragment key={item.key}>
+                        {item}
+                    </Fragment>
+                ))}
             </List>
 
             {/* group divider */}

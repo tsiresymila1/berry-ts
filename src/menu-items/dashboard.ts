@@ -1,8 +1,9 @@
 // assets
 import { IconDashboard } from '@tabler/icons-react';
+import { MenuItem } from "@/components/layout/MainLayout/Sidebar/MenuList/NavItem.tsx";
 
 
-const dashboard = {
+const dashboard: MenuItem = {
     id: 'dashboard',
     title: 'Dashboard',
     type: 'group',

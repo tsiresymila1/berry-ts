@@ -1,5 +1,5 @@
 import { FC, Fragment, useCallback, useEffect, useMemo, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
@@ -21,7 +21,6 @@ interface NavCollapseProps {
 const NavCollapse: FC<NavCollapseProps> = ({menu, level}) => {
     const theme = useTheme();
     const customization = useCustomizationStore();
-    const navigate = useNavigate();
     const {pathname} = useLocation();
 
     const [open, setOpen] = useState(false);
@@ -30,10 +29,7 @@ const NavCollapse: FC<NavCollapseProps> = ({menu, level}) => {
     const handleClick = useCallback(() => {
         setOpen(prev => !prev);
         setSelected(prev => (!prev ? menu.id : null));
-        if (menu?.id !== 'authentication') {
-            navigate(menu.children?.[0]?.url || '');
-        }
-    }, [menu.id, menu.children, navigate]);
+    }, [menu.id]);
 
     const checkOpenForParent = (child: MenuItem[], id: string) => {
         for (const item of child) {

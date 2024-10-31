@@ -2,11 +2,10 @@ import { ForwardedRef, forwardRef, ReactNode } from 'react';
 
 // material-ui
 import Card, { CardProps } from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
+import CardContent, { CardContentProps } from '@mui/material/CardContent';
+import CardHeader, { CardHeaderProps } from '@mui/material/CardHeader';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { SxProps } from "@mui/system";
 
 // constant
 const headerSX = {
@@ -20,12 +19,13 @@ export type  MainCardProps = {
     children?: ReactNode;
     content?: boolean;
     contentClass?: string;
-    contentSX?: SxProps;
+    contentSX?: CardContentProps['sx'];
     darkTitle?: boolean;
     secondary?: ReactNode;
     shadow?: string | number;
     sx?: object;
     title?: ReactNode;
+    headerProps?: CardHeaderProps
 } & CardProps
 
 // ==============================|| CUSTOM MAIN CARD ||============================== //
@@ -44,6 +44,7 @@ const MainCard = forwardRef<HTMLDivElement, MainCardProps>(
             shadow,
             sx = {},
             title,
+            headerProps,
             ...others
         },
         ref
@@ -65,12 +66,13 @@ const MainCard = forwardRef<HTMLDivElement, MainCardProps>(
                 {!darkTitle && title && <CardHeader
                     sx={headerSX}
                     title={title}
-                    action={secondary}/>}
+                    action={secondary} {...headerProps}/>}
                 {darkTitle && title && <CardHeader
                     sx={headerSX}
                     title={
                         <Typography variant="h3">{title}</Typography>
                     }
+                    {...headerProps}
                     action={secondary}/>}
 
                 {/* content & header divider */}

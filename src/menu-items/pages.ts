@@ -1,8 +1,9 @@
 // assets
 import { IconKey } from '@tabler/icons-react';
+import { MenuItem } from "@/components/layout/MainLayout/Sidebar/MenuList/NavItem.tsx";
 
 
-const pages = {
+const pages: MenuItem = {
     id: 'pages',
     title: 'Pages',
     caption: 'Pages Caption',

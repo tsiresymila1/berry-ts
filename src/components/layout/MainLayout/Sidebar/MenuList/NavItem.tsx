@@ -38,16 +38,17 @@ interface ChipType {
 
 export interface MenuItem {
     id: string;
-    title: string;
+    title?: string;
     caption?: string;
-    url?: string;
+    url?: To;
     icon?: ElementType;
     children?: MenuItem[];
-    type: 'collapse' | 'item';
-    target?: string;
+    type: 'collapse' | 'item' | 'group';
+    target?: string | boolean;
     chip?: ChipType,
     external?: boolean;
     disabled?: boolean;
+    breadcrumbs?: boolean
 }
 
 interface NavItemProps {
@@ -84,7 +85,7 @@ const NavItem: FC<NavItemProps> = ({item, level}) => {
     const listItemProps = useMemo(() => {
         return item.external ? {component: 'a', href: item.url, target: itemTarget} : {
             component: forwardRef<HTMLAnchorElement>((props, ref) => (
-                <Link ref={ref} {...props} to={item.url as To} target={itemTarget}/>
+                <Link ref={ref} {...props} to={item.url!} target={itemTarget}/>
             )),
         };
     }, [item.external, item.url, itemTarget])

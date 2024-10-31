@@ -1,8 +1,9 @@
 // assets
 import { IconPalette, IconShadow, IconTypography } from '@tabler/icons-react';
+import { MenuItem } from "@/components/layout/MainLayout/Sidebar/MenuList/NavItem.tsx";
 
 
-const utilities = {
+const utilities: MenuItem = {
     id: 'utilities',
     title: 'Utilities',
     type: 'group',
