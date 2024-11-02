@@ -183,8 +183,9 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
         MuiChip: {
             styleOverrides: {
                 root: {
+                    fontSize: 13,
                     '&.MuiChip-deletable .MuiChip-deleteIcon': {
-                        color: 'inherit'
+                        color: 'inherit',
                     }
                 }
             }
@@ -194,6 +195,13 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
                 tooltip: {
                     color: colors.paper,
                     background: colors.grey700
+                }
+            }
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    fontSize: '14px',
                 }
             }
         }

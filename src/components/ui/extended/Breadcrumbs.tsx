@@ -77,7 +77,6 @@ const Breadcrumbs = ({
 
     const linkSX = {
         display: 'flex',
-        color: 'grey.900',
         textDecoration: 'none',
         alignContent: 'center',
         alignItems: 'center',
@@ -130,7 +129,7 @@ const Breadcrumbs = ({
                     {...(main.url ? {component: Link, to: main.url} : {})}
                     variant="subtitle1"
                     sx={linkSX}
-                    color={window.location.pathname === main.url ? 'text.primary' : 'text.secondary'}
+                    color={window.location.pathname === main.url ? 'text.primary' : 'text.primary'}
                 >
                     {icons && CollapseIcon && <CollapseIcon style={iconSX}/>}
                     {main.title}

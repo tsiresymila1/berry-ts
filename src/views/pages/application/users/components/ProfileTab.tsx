@@ -44,10 +44,10 @@ const ProfileTab = () => {
                 <Grid2 container spacing={1}>
                     <Grid2 size={12}>
                         <FormControl fullWidth sx={{ m: 1 }} variant="filled">
-                            <InputLabel htmlFor="standard-adornment-amount">Name</InputLabel>
+                            <InputLabel htmlFor="standard-adornment-name">Name</InputLabel>
                             <FilledInput
                                 type="text"
-                                id="standard-adornment-amount"
+                                id="standard-adornment-name"
                                 // startAdornment={<InputAdornment position="start">$</InputAdornment>}
                             />
                             <FormHelperText >Helpers</FormHelperText>
@@ -55,9 +55,10 @@ const ProfileTab = () => {
                     </Grid2>
                     <Grid2 size={12}>
                         <FormControl fullWidth sx={{ m: 1 }} variant="filled">
-                            <InputLabel htmlFor="standard-adornment-eamil">EMail address</InputLabel>
+                            <InputLabel htmlFor="standard-adornment-eamil">Email address</InputLabel>
                             <FilledInput
-                                type="email"
+                                type="text"
+                                inputMode="email"
                                 id="standard-adornment-email"
                                 // startAdornment={<InputAdornment position="start">$</InputAdornment>}
                             />
@@ -70,6 +71,7 @@ const ProfileTab = () => {
                                 <InputLabel htmlFor="standard-adornment-address">Address</InputLabel>
                                 <FilledInput
                                     type="text"
+                                    inputMode="text"
                                     id="standard-adornment-address"
                                     // startAdornment={<InputAdornment position="start">$</InputAdornment>}
                                 />
@@ -95,6 +97,7 @@ const ProfileTab = () => {
                                 <FilledInput
                                     type="text"
                                     id="standard-adornment-phone-number"
+                                    inputMode="tel"
                                     // startAdornment={<InputAdornment position="start">$</InputAdornment>}
                                 />
                                 {/*<FormHelperText error >Helpers</FormHelperText>*/}

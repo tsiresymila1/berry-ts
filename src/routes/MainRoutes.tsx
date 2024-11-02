@@ -6,6 +6,7 @@ import { lazy } from "react";
 const DashboardPage = Loadable(lazy(() => import('@/views/pages/dashboard/DashboardPage')));
 const CalendarPage = Loadable(lazy(() => import('@/views/pages/application/CalendarPage')));
 const ProfilePage = Loadable(lazy(() => import('@/views/pages/application/users/ProfilePage')));
+const ListPage = Loadable(lazy(() => import('@/views/pages/application/users/ListPage')));
 
 const MainRoutes: RouteObject = {
     path: '/admin',
@@ -26,6 +27,10 @@ const MainRoutes: RouteObject = {
                 {
                     path: "profile01",
                     element: <ProfilePage />
+                },
+                {
+                    path: "list01",
+                    element: <ListPage />
                 }
             ]
         }

@@ -3,7 +3,7 @@ import { lazy } from 'react';
 // project imports
 import Loadable from '@/components/ui/Loadable';
 import MinimalLayout from '@/components/layout/MinimalLayout';
-import { RouteObject } from "react-router";
+import { Navigate, RouteObject } from "react-router";
 
 // login option 3 routing
 const LoginPage = Loadable(lazy(() => import('@/views/pages/auth/LoginPage.tsx')));
@@ -15,6 +15,11 @@ const AuthenticationRoutes: RouteObject = {
     path: '/',
     element: <MinimalLayout/>,
     children: [
+        {
+            path: '',
+            index: true,
+            element: <Navigate to='/admin'/>
+        },
         {
             path: '/login',
             element: <LoginPage/>

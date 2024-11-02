@@ -28,6 +28,21 @@ const application: MenuItem = {
                             url: "/admin/users/profile01"
                         }
                     ]
+                },
+                {
+                    title: "List",
+                    id: "list_user",
+                    type: 'collapse',
+                    icon: IconUser,
+                    children:[
+                        {
+                            title: "List 01",
+                            id: "list_01",
+                            type: "item",
+                            breadcrumbs: true,
+                            url: "/admin/users/list01"
+                        }
+                    ]
                 }
             ]
         },

@@ -4,6 +4,7 @@ import CustomTabPanel from "@/components/ui/CustomTabPanel.tsx";
 import { Tab, Tabs } from "@mui/material";
 import Box from "@mui/material/Box";
 import ProfileTab from "@/views/pages/application/users/components/ProfileTab.tsx";
+import SecurityTab from "@/views/pages/application/users/components/SecurityTab.tsx";
 
 const ProfilePage = () => {
     const [value, setValue] = useState(0);
@@ -37,7 +38,7 @@ const ProfilePage = () => {
                 Billing
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
-                Security
+                <SecurityTab />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={3}>
                 Notification

@@ -13,8 +13,6 @@ import Radio from '@mui/material/Radio';
 import Slider from '@mui/material/Slider';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 
 // Third-party
@@ -27,7 +25,8 @@ import { useCustomizationStore } from '@/store/customization.ts';
 import { gridSpacing } from '@/store/constant';
 
 // Assets
-import { IconSettings } from '@tabler/icons-react';
+import { IconMoon, IconSettings, IconSun } from '@tabler/icons-react';
+import Stack from "@mui/material/Stack";
 
 
 const Customization = () => {
@@ -92,14 +91,17 @@ const Customization = () => {
                 <PerfectScrollbar component="div">
                     <Grid container width="100%" spacing={gridSpacing} sx={{p: 3}}>
                         <Grid size={12}>
-                            {/* Theme  */}
-                            <SubCard title="Theme" secondary={
-                                <IconButton
-                                    onClick={toggleDarkMode}
-                                    color="inherit"
-                                    aria-label="toggle dark/light mode">
-                                    {scheme === "dark" ? <Brightness7Icon/> : <Brightness4Icon/>}
-                                </IconButton>}/>
+                            <SubCard>
+                                <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
+                                    <Typography variant="body2">Theme</Typography>
+                                    <IconButton
+                                        onClick={toggleDarkMode}
+                                        color="inherit"
+                                        aria-label="Toggle dark/light mode">
+                                        {scheme === "dark" ? <IconSun/> : <IconMoon color="black"/>}
+                                    </IconButton>
+                                </Stack>
+                            </SubCard>
                         </Grid>
                         <Grid size={12}>
                             {/* Font family */}
