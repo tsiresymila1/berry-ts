@@ -5,7 +5,7 @@ import listPlugin from '@fullcalendar/list'
 import timeGridPlugin from "@fullcalendar/timegrid";
 import { MouseEvent, useCallback, useEffect, useRef, useState } from "react";
 import MainCard from "@/components/ui/cards/MainCard.tsx";
-import { useTheme } from "@mui/material/styles";
+import { alpha, darken, useTheme } from "@mui/material/styles";
 import { Grid2, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import {
     IconChevronLeft,
@@ -19,6 +19,7 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { AddAlarmTwoTone } from "@mui/icons-material";
 
 
 const CalendarPage = () => {
@@ -54,14 +55,27 @@ const CalendarPage = () => {
         contentSX={{
             '& .fc .fc-col-header-cell .fc-scrollgrid-sync-inner': {
                 padding: `12px`,
-                backgroundColor: theme.palette.dark['900'],
+                backgroundColor: alpha(darken(theme.palette.primary.dark, 0.2), 0.05),
             },
-            '& .fc .fc-day-today .fc-scrollgrid-sync-inner': {
-                backgroundColor: theme.palette.mode == 'dark' ? theme.palette.background.paper :theme.palette.primary.light,
+            '& .fc .fc-listWeek-view .fc-list-sticky .fc-list-day > th, & .fc .fc-listWeek-view .fc-cell-shaded': {
+                padding: `12px`,
+                backgroundColor: alpha(darken(theme.palette.primary.dark, 0.2), 0.05),
+            },
+            '& .fc': {
+                '--fc-border-color': alpha(darken(theme.palette.primary.dark, 0.2), 0.15),
+                '--fc-today-bg-color': alpha(darken(theme.palette.primary.main, 0.2), 0.15)
             }
         }}
+        secondary={
+            <Button
+                variant="contained"
+                color="secondary"
+                startIcon={
+                    <AddAlarmTwoTone/>
+                }
+            >Add New Event</Button>}
     >
-        <Grid2 container spacing={2} pt={2}>
+        <Grid2 container spacing={2} pt={2} p={2}>
             <Grid2 size={12} container spacing={2}>
                 <Grid2>
                     <Button
@@ -108,7 +122,7 @@ const CalendarPage = () => {
                 </Grid2>
             </Grid2>
             <Grid2 size={12}>
-                <MainCard border>
+                <MainCard border sx={{p: 1, mt: 2}}>
                     <FullCalendar
                         plugins={[listPlugin, dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         dateClick={handleDateClick}

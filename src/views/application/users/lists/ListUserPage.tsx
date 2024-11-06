@@ -1,9 +1,5 @@
 import MainCard from "@/components/ui/cards/MainCard.tsx";
-
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import { alpha } from "@mui/material/styles";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
@@ -15,63 +11,17 @@ import IconButton from "@mui/material/IconButton";
 import User1 from '@/assets/images/users/user-round.svg';
 import { Pagination, PaginationItem } from "@mui/lab";
 import { Link } from "react-router-dom";
-import { useCustomizationStore } from "@/store/customization.ts";
+import SearchInput from "@/views/application/users/components/SearchInput.tsx";
 
-const Search = styled('div')(({theme}) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(1),
-        width: 'auto',
-    },
-}));
 
-const SearchIconWrapper = styled('div')(({theme}) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({theme}) => ({
-    color: 'inherit',
-    width: '100%',
-    borderRadius: `${useCustomizationStore().borderRadius}px`,
-    backgroundColor: alpha(theme.palette.primary.dark, 0.1),
-    '& .MuiInputBase-input': {
-        padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        transition: theme.transitions.create('width'),
-        [theme.breakpoints.up('sm')]: {
-            width: '20ch',
-            '&:focus': {
-                width: '24ch',
-            },
-        },
-    },
-}));
-
-const ListPage = () => {
-    return <MainCard title="List" secondary={<Search>
-        <SearchIconWrapper>
-            <SearchIcon color="primary" fontSize="small"/>
-        </SearchIconWrapper>
-        <StyledInputBase placeholder="Search"/>
-    </Search>}>
+const ListUserPage = () => {
+    return <MainCard title="List" secondary={
+        <SearchInput/>
+    }>
         <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{minWidth: 650}} aria-label="simple table">
                 <TableHead>
-                    <TableRow sx={{ fontSize: 12}}>
+                    <TableRow sx={{fontSize: 12}}>
                         <TableCell>#</TableCell>
                         <TableCell>User profile</TableCell>
                         <TableCell>Country</TableCell>
@@ -90,9 +40,10 @@ const ListPage = () => {
                                 <Stack>
                                     <Stack direction="row" gap={1}>
                                         <Typography variant="subtitle1">Curtis</Typography>
-                                        <IconCircleCheck color="green" fontSize="medium" />
+                                        <IconCircleCheck color="green" fontSize="medium"/>
                                     </Stack>
-                                    <Typography fontWeight="normal" variant="h6" component="div">wiegand@hotmail.com</Typography>
+                                    <Typography fontWeight="normal" variant="h6"
+                                                component="div">wiegand@hotmail.com</Typography>
                                 </Stack>
                             </Stack>
                         </TableCell>
@@ -100,15 +51,15 @@ const ListPage = () => {
                         <TableCell>834</TableCell>
                         <TableCell>3645</TableCell>
                         <TableCell>
-                            <Chip chipcolor="success" variant="filled" label="Active" />
+                            <Chip chipcolor="success" variant="filled" label="Active"/>
                         </TableCell>
                         <TableCell>
                             <Stack direction="row" justifyContent="center" alignItems="center">
                                 <IconButton color="primary">
-                                    <IconPencil />
+                                    <IconPencil/>
                                 </IconButton>
                                 <IconButton color="error">
-                                    <IconTrash fontSize="medium" />
+                                    <IconTrash fontSize="medium"/>
                                 </IconButton>
                             </Stack>
                         </TableCell>
@@ -134,4 +85,4 @@ const ListPage = () => {
     </MainCard>;
 }
 
-export default ListPage;
+export default ListUserPage;

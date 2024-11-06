@@ -9,7 +9,7 @@ export default function componentStyleOverrides(colors: ScssColors,custom: Custo
                 root: {
                     fontWeight: 500,
                     borderRadius: '4px',
-                    fontSize: "0.8125rem"
+                    fontSize: "0.875rem"
                 }
             }
         },

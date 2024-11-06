@@ -103,7 +103,10 @@ export default function themeTypography(
             letterSpacing: "0em",
             fontWeight: 400,
             lineHeight: "1.5em",
+            fontSize: '0.875rem',
             color: colors.darkTextPrimary2,
+            whiteSpace: "break-spaces",
+            margin: "0em"
         },
         button: {
             textTransform: "capitalize",

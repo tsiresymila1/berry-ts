@@ -84,7 +84,7 @@ const PopularCard = ({isLoading}: PopularCardProps) => {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid size={12} sx={{pt: '16px !important'}}>
+                            <Grid size={12}>
                                 <BajajAreaChartCard/>
                             </Grid>
                             <Grid size={12}>

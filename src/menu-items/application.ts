@@ -26,6 +26,13 @@ const application: MenuItem = {
                             type: "item",
                             breadcrumbs: true,
                             url: "/admin/users/profile01"
+                        },
+                        {
+                            title: "Profile 02",
+                            id: "2",
+                            type: "item",
+                            breadcrumbs: true,
+                            url: "/admin/users/profile02"
                         }
                     ]
                 },
@@ -41,6 +48,35 @@ const application: MenuItem = {
                             type: "item",
                             breadcrumbs: true,
                             url: "/admin/users/list01"
+                        },
+                        {
+                            title: "List 02",
+                            id: "list_02",
+                            type: "item",
+                            breadcrumbs: true,
+                            url: "/admin/users/list02"
+                        }
+                    ]
+                },
+                {
+                    title: "Cards",
+                    id: "cards_user",
+                    type: 'collapse',
+                    icon: IconUser,
+                    children:[
+                        {
+                            title: "Card 01",
+                            id: "card_01",
+                            type: "item",
+                            breadcrumbs: true,
+                            url: "/admin/users/card01"
+                        },
+                        {
+                            title: "Card 02",
+                            id: "card_02",
+                            type: "item",
+                            breadcrumbs: true,
+                            url: "/admin/users/card02"
                         }
                     ]
                 }

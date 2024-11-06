@@ -21,30 +21,30 @@ const BajajAreaChartCard = () => {
         const newSupportChart = {
             ...chartData.options,
             colors: [orangeDark],
-            tooltip: { theme: 'light' }
+            tooltip: {theme: 'light'}
         };
         ApexCharts.exec(`support-chart`, 'updateOptions', newSupportChart);
     }, [orangeDark]);
 
     return (
-        <Card sx={{ bgcolor: 'rgb(218,202,231)' }}>
-            <Grid container sx={{ p: 2, pb: 0, color: '#fff' }}>
-                <Grid  size={12}>
+        <Card sx={{bgcolor: 'rgb(237, 231, 246)'}}>
+            <Grid container sx={{p: 2, pb: 0, color: '#fff'}}>
+                <Grid size={12}>
                     <Grid container alignItems="center" justifyContent="space-between">
                         <Grid>
-                            <Typography variant="subtitle1" sx={{ color: 'secondary.dark' }}>
+                            <Typography variant="subtitle1" sx={{color: 'secondary.dark'}}>
                                 Bajaj Finery
                             </Typography>
                         </Grid>
                         <Grid>
-                            <Typography variant="h4" sx={{ color: 'grey.800' }}>
+                            <Typography variant="h4" sx={{color: 'grey.800'}}>
                                 $1839.00
                             </Typography>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid  size={12}>
-                    <Typography variant="subtitle2" sx={{ color: 'grey.800' }}>
+                <Grid size={12}>
+                    <Typography variant="subtitle2" sx={{color: 'grey.800'}}>
                         10% Profit
                     </Typography>
                 </Grid>

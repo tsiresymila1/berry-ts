@@ -3,8 +3,8 @@ import { useState } from "react";
 import CustomTabPanel from "@/components/ui/CustomTabPanel.tsx";
 import { Tab, Tabs } from "@mui/material";
 import Box from "@mui/material/Box";
-import ProfileTab from "@/views/pages/application/users/components/ProfileTab.tsx";
-import SecurityTab from "@/views/pages/application/users/components/SecurityTab.tsx";
+import ProfileTab from "@/views/application/users/components/ProfileTab.tsx";
+import SecurityTab from "@/views/application/users/components/SecurityTab.tsx";
 
 const ProfilePage = () => {
     const [value, setValue] = useState(0);
